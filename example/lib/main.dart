@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _volHidden = false;
   SecondaryState _secondaryState = SecondaryState.MACD;
   bool isLine = true;
-  bool isChinese = true;
+  bool isChinese = false;
   bool _hideGrid = false;
   bool _showNowPrice = true;
   List<DepthEntity>? _bids, _asks;
@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
               hideGrid: _hideGrid,
               isTapShowInfoDialog: false,
               verticalTextAlignment: _verticalTextAlignment,
-              maDayList: [1, 100, 1000],
+              maDayList: [7, 25, 99], 
             ),
           ),
           if (showLoading)
@@ -265,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
         .reversed
         .toList()
         .cast<KLineEntity>();
-    DataUtil.calculate(datas!);
+    DataUtil.calculate(datas!, [7, 25, 99]); //이동평균선 수치를 이곳에서 입력할 후 있습니다.
     showLoading = false;
     setState(() {});
   }

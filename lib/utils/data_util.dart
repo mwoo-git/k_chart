@@ -4,7 +4,7 @@ import '../entity/index.dart';
 
 class DataUtil {
   static calculate(List<KLineEntity> dataList,
-      [List<int> maDayList = const [5, 10, 20], int n = 20, k = 2]) {
+      [List<int> maDayList = const [7, 25, 99], int n = 20, k = 2]) {
     calcMA(dataList, maDayList);
     calcBOLL(dataList, n, k);
     calcVolumeMA(dataList);
