@@ -1,5 +1,5 @@
 # k_chart
-Maybe this is the best k chart in Flutter.Support drag,scale,long press,fling.And easy to use.
+openFlutter/k_chart 패키지를 프로젝트에서 사용하기 위해 업비트 버전으로 수정하였습니다.
 
 ## display
 
