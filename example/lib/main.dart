@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    getData('1day');
+    getData('days');
     rootBundle.loadString('assets/depth.json').then((result) {
       final parseJson = json.decode(result);
       final tick = parseJson['tick'] as Map<String, dynamic>;
@@ -239,8 +239,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //获取火币数据，需要翻墙
   Future<String> getChatDataFromInternet(String? period) async {
-    var url =
-        'https://api.huobi.br.com/market/history/kline?period=${period ?? '1day'}&size=300&symbol=btcusdt';
+    // var url = 'https://api.upbit.com/v1/candles/${period ?? 'days'}?market=KRW-BTC&count=200';
+    var url = 'https://api.upbit.com/v1/candles/minutes/10?market=KRW-BTC&count=200';
+
     late String result;
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
@@ -257,16 +258,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void solveChatData(String result) {
-    final Map parseJson = json.decode(result) as Map<dynamic, dynamic>;
-    final list = parseJson['data'] as List<dynamic>;
-    datas = list
-        .map((item) => KLineEntity.fromJson(item as Map<String, dynamic>))
-        .toList()
-        .reversed
-        .toList()
-        .cast<KLineEntity>();
-    DataUtil.calculate(datas!, [7, 25, 99]); //이동평균선 수치를 이곳에서 입력할 후 있습니다.
-    showLoading = false;
-    setState(() {});
-  }
+  final List<dynamic> list = json.decode(result) as List<dynamic>;
+  datas = list
+    .map((item) => KLineEntity.fromJson(item as Map<String, dynamic>))
+    .toList()
+    .reversed
+    .toList()
+    .cast<KLineEntity>();
+  DataUtil.calculate(datas!, [7, 25, 99]);
+  showLoading = false;
+  setState(() {});
+}
 }
