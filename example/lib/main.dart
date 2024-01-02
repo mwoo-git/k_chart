@@ -101,6 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             height: 450,
             width: double.infinity,
+            color: Colors.black,
             child: KChartWidget(
               datas,
               chartStyle,
