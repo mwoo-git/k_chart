@@ -77,7 +77,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
     } else if (state == MainState.BOLL) {
       span = TextSpan(
         children: [
-          TextSpan(text: "볼린저밴드   20", style: getTextStyle(Colors.grey))
+          TextSpan(text: "볼린저밴드    20    2", style: getTextStyle(Colors.grey))
           // if (data.up != 0)
           //   TextSpan(
           //       text: "BOLL:${format(data.mb)}    ",
@@ -101,7 +101,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
 
   List<InlineSpan> _createMATextSpan(CandleEntity data) {
     List<InlineSpan> result = [];
-    result.add(TextSpan(text: "단순 MA    ", style: getTextStyle(Colors.grey)));
+    result.add(TextSpan(text: "단순 MA    ", style: getTextStyle(this.chartColors.defaultTextColor)));
 
     for (int i = 0; i < (data.maValueList?.length ?? 0); i++) {
       if (data.maValueList?[i] != 0) {

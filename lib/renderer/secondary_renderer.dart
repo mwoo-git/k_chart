@@ -93,26 +93,26 @@ class SecondaryRenderer extends BaseChartRenderer<MACDEntity> {
       case SecondaryState.MACD:
         children = [
           TextSpan(
-              text: "MACD(12,26,9)    ",
+              text: "MACD(12, 26, 9)    ",
               style: getTextStyle(this.chartColors.defaultTextColor)),
-          if (data.macd != 0)
-            TextSpan(
-                text: "MACD:${format(data.macd)}    ",
-                style: getTextStyle(this.chartColors.macdColor)),
-          if (data.dif != 0)
-            TextSpan(
-                text: "DIF:${format(data.dif)}    ",
-                style: getTextStyle(this.chartColors.difColor)),
-          if (data.dea != 0)
-            TextSpan(
-                text: "DEA:${format(data.dea)}    ",
-                style: getTextStyle(this.chartColors.deaColor)),
+          // if (data.macd != 0)
+          //   TextSpan(
+          //       text: "MACD:${format(data.macd)}    ",
+          //       style: getTextStyle(this.chartColors.macdColor)),
+          // if (data.dif != 0)
+          //   TextSpan(
+          //       text: "DIF:${format(data.dif)}    ",
+          //       style: getTextStyle(this.chartColors.difColor)),
+          // if (data.dea != 0)
+          //   TextSpan(
+          //       text: "DEA:${format(data.dea)}    ",
+          //       style: getTextStyle(this.chartColors.deaColor)),
         ];
         break;
       case SecondaryState.KDJ:
         children = [
           TextSpan(
-              text: "KDJ(9,1,3)    ",
+              text: "KDJ(9, 1, 3)    ",
               style: getTextStyle(this.chartColors.defaultTextColor)),
           if (data.macd != 0)
             TextSpan(
@@ -130,22 +130,25 @@ class SecondaryRenderer extends BaseChartRenderer<MACDEntity> {
         break;
       case SecondaryState.RSI:
         children = [
+          TextSpan(text: "RSI(14)    ", style: getTextStyle(this.chartColors.defaultTextColor)),
           TextSpan(
-              text: "RSI(14):${format(data.rsi)}    ",
+              text: "${format(data.rsi)}    ",
               style: getTextStyle(this.chartColors.rsiColor)),
         ];
         break;
       case SecondaryState.WR:
         children = [
+          TextSpan(text: "WR(14)    ", style: getTextStyle(this.chartColors.defaultTextColor)),
           TextSpan(
-              text: "WR(14):${format(data.r)}    ",
+              text: "${format(data.r)}    ",
               style: getTextStyle(this.chartColors.rsiColor)),
         ];
         break;
       case SecondaryState.CCI:
         children = [
+          TextSpan(text: "CCI(14)    ", style: getTextStyle(this.chartColors.defaultTextColor)),
           TextSpan(
-              text: "CCI(14):${format(data.cci)}    ",
+              text: "${format(data.cci)}    ",
               style: getTextStyle(this.chartColors.rsiColor)),
         ];
         break;

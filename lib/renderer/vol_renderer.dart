@@ -54,15 +54,18 @@ class VolRenderer extends BaseChartRenderer<VolumeEntity> {
     TextSpan span = TextSpan(
       children: [
         TextSpan(
-            text: "VOL:${NumberUtil.format(data.vol)}    ",
-            style: getTextStyle(this.chartColors.volColor)),
+            text: "거래량 단순 MA    ",
+            // text: "거래량:${NumberUtil.format(data.vol)}    ",
+            style: getTextStyle(this.chartColors.defaultTextColor)),
         if (data.MA5Volume.notNullOrZero)
           TextSpan(
-              text: "MA5:${NumberUtil.format(data.MA5Volume!)}    ",
+              text: "5    ",
+              // text: "단순 MA5:${NumberUtil.format(data.MA5Volume!)}    ",
               style: getTextStyle(this.chartColors.ma5Color)),
         if (data.MA10Volume.notNullOrZero)
           TextSpan(
-              text: "MA10:${NumberUtil.format(data.MA10Volume!)}    ",
+            text: "10   ",
+              // text: "MA10:${NumberUtil.format(data.MA10Volume!)}    ",
               style: getTextStyle(this.chartColors.ma10Color)),
       ],
     );
