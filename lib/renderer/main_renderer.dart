@@ -101,7 +101,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
 
   List<InlineSpan> _createMATextSpan(CandleEntity data) {
     List<InlineSpan> result = [];
-    result.add(TextSpan(text: "이동평균선    ", style: getTextStyle(Colors.grey)));
+    result.add(TextSpan(text: "단순 MA    ", style: getTextStyle(Colors.grey)));
 
     for (int i = 0; i < (data.maValueList?.length ?? 0); i++) {
       if (data.maValueList?[i] != 0) {

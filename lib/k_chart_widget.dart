@@ -358,7 +358,7 @@ class _KChartWidgetState extends State<KChartWidget>
           KLineEntity entity = snapshot.data!.kLineEntity;
           double upDown = entity.change ?? entity.close - entity.open;
           double upDownPercent = entity.ratio ?? (upDown / entity.open) * 100;
-          final double? entityAmount = entity.amount;
+          final double? entityAmount = entity.vol;
           infos = [
             getDate(entity.time),
             getString(entity.open),
