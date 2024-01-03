@@ -77,18 +77,19 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
     } else if (state == MainState.BOLL) {
       span = TextSpan(
         children: [
-          if (data.up != 0)
-            TextSpan(
-                text: "BOLL:${format(data.mb)}    ",
-                style: getTextStyle(this.chartColors.ma5Color)),
-          if (data.mb != 0)
-            TextSpan(
-                text: "UB:${format(data.up)}    ",
-                style: getTextStyle(this.chartColors.ma10Color)),
-          if (data.dn != 0)
-            TextSpan(
-                text: "LB:${format(data.dn)}    ",
-                style: getTextStyle(this.chartColors.ma30Color)),
+          TextSpan(text: "볼린저밴드   20", style: getTextStyle(Colors.grey))
+          // if (data.up != 0)
+          //   TextSpan(
+          //       text: "BOLL:${format(data.mb)}    ",
+          //       style: getTextStyle(this.chartColors.ma5Color)),
+          // if (data.mb != 0)
+          //   TextSpan(
+          //       text: "UB:${format(data.up)}    ",
+          //       style: getTextStyle(this.chartColors.ma10Color)),
+          // if (data.dn != 0)
+          //   TextSpan(
+          //       text: "LB:${format(data.dn)}    ",
+          //       style: getTextStyle(this.chartColors.ma30Color)),
         ],
       );
     }
