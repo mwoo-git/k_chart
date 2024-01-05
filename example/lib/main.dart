@@ -244,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //获取火币数据，需要翻墙
   Future<String> getChatDataFromInternet(String? period) async {
     // var url = 'https://api.upbit.com/v1/candles/${period ?? 'days'}?market=KRW-BTC&count=200';
-    var url = 'https://api.upbit.com/v1/candles/minutes/10?market=KRW-BTC&count=200';
+    var url = 'https://api.upbit.com/v1/candles/days?market=KRW-SEI&count=200';
 
     late String result;
     final response = await http.get(Uri.parse(url));

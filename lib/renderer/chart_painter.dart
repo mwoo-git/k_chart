@@ -1,6 +1,7 @@
 import 'dart:async' show StreamSink;
 
 import 'package:flutter/material.dart';
+import 'package:k_chart/extension/num_ext.dart';
 import 'package:k_chart/utils/number_util.dart';
 
 import '../entity/info_window_entity.dart';
@@ -352,7 +353,7 @@ class ChartPainter extends BaseChartPainter {
     if (x < mWidth / 2) {
       //画右边
       TextPainter tp = getTextPainter(
-        mMainLowMinValue.toStringAsFixed(fixedLength),
+        mMainLowMinValue.formattedString,
         chartColors.minColor,
       );
 
@@ -371,7 +372,7 @@ class ChartPainter extends BaseChartPainter {
       );
     } else {
       TextPainter tp = getTextPainter(
-        mMainLowMinValue.toStringAsFixed(fixedLength),
+        mMainLowMinValue.formattedString,
         chartColors.minColor,
       );
 
@@ -394,7 +395,7 @@ class ChartPainter extends BaseChartPainter {
     if (x < mWidth / 2) {
       //画右边
       TextPainter tp = getTextPainter(
-        mMainHighMaxValue.toStringAsFixed(fixedLength),
+        mMainHighMaxValue.formattedString,
         chartColors.maxColor,
       );
 
@@ -413,7 +414,7 @@ class ChartPainter extends BaseChartPainter {
       );
     } else {
       TextPainter tp = getTextPainter(
-        mMainHighMaxValue.toStringAsFixed(fixedLength),
+        mMainHighMaxValue.formattedString,
         chartColors.maxColor,
       );
 
@@ -473,7 +474,7 @@ class ChartPainter extends BaseChartPainter {
     }
     //再画背景和文本
     TextPainter tp = getTextPainter(
-        value.toStringAsFixed(fixedLength), this.chartColors.nowPriceTextColor);
+        value.formattedString, this.chartColors.nowPriceTextColor);
 
     double offsetX;
     switch (verticalTextAlignment) {
@@ -557,6 +558,7 @@ class ChartPainter extends BaseChartPainter {
       ..strokeWidth = this.chartStyle.vCrossWidth
       ..isAntiAlias = true;
     double x = getX(index);
+    debugPrint("${index}");
     double y = getMainY(point.close);
     // k线图竖线
     canvas.drawLine(Offset(x, mTopPadding),
