@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart' show Color, Colors;
+// ignore: implementation_imports
 import 'package:flutter/src/material/colors.dart';
 
 class ChartColors {
@@ -10,8 +11,8 @@ class ChartColors {
   Color ma5Color = Color(0xffC9B885);
   Color ma10Color = Color(0xff6CB0A6);
   Color ma30Color = Color(0xff9979C6);
-  Color upColor = Color(0xff4DAA90);
-  Color dnColor = Color(0xffC15466);
+  Color upColor = Color(0xFFEF4452);
+  Color dnColor = Color(0xFF3182F5);
   Color volColor = Color(0xff4729AE);
 
   Color macdColor = Color(0xff4729AE);
