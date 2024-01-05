@@ -26,8 +26,8 @@ class ChartColors {
 
   MaterialColor defaultTextColor = Colors.grey;
 
-  Color nowPriceUpColor = Color(0xff4DAA90);
-  Color nowPriceDnColor = Color(0xffC15466);
+  Color nowPriceUpColor = Color(0xFFEF4452);
+  Color nowPriceDnColor = Color(0xFF3182F5);
   Color nowPriceTextColor = Color(0xffffffff);
 
   //深度颜色
