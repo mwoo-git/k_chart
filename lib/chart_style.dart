@@ -105,7 +105,7 @@ class ChartStyle {
   //现在价格的线条粗细
   double nowPriceLineWidth = 1;
 
-  int gridRows = 4;
+  int gridRows = 3;
 
   int gridColumns = 4;
 

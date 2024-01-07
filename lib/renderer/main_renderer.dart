@@ -18,7 +18,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
   bool isLine;
 
   //绘制的内容区域
-  late Rect _contentRect;
+  late Rect contentRect;
   double _contentPadding = 5.0;
   List<int> maDayList;
   final ChartStyle chartStyle;
@@ -55,7 +55,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
       ..style = PaintingStyle.stroke
       ..strokeWidth = mLineStrokeWidth
       ..color = this.chartColors.kLineColor;
-    _contentRect = Rect.fromLTRB(
+    contentRect = Rect.fromLTRB(
         chartRect.left,
         chartRect.top + _contentPadding,
         chartRect.right,
@@ -64,7 +64,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
       maxValue *= 1.5;
       minValue /= 2;
     }
-    scaleY = _contentRect.height / (maxValue - minValue);
+    scaleY = contentRect.height / (maxValue - minValue);
   }
 
   @override
@@ -289,12 +289,12 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
   double getY(double y) {
     //For TrendLine
     updateTrendLineData();
-    return (maxValue - y) * scaleY + _contentRect.top;
+    return (maxValue - y) * scaleY + contentRect.top;
   }
 
   void updateTrendLineData() {
     trendLineMax = maxValue;
     trendLineScale = scaleY;
-    trendLineContentRec = _contentRect.top;
+    trendLineContentRec = contentRect.top;
   }
 }
