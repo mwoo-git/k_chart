@@ -558,7 +558,6 @@ class ChartPainter extends BaseChartPainter {
       ..strokeWidth = this.chartStyle.vCrossWidth
       ..isAntiAlias = true;
     double x = getX(index);
-    debugPrint("${index}");
     double y = getMainY(point.close);
     // k线图竖线
     canvas.drawLine(Offset(x, mTopPadding),
