@@ -279,9 +279,10 @@ class ChartPainter extends BaseChartPainter {
       path.lineTo(textWidth + 2 * w1 + w2, y);
       path.lineTo(textWidth + 2 * w1, y - r);
       path.close();
-      canvas.drawPath(path, selectPointPaint);
-      canvas.drawPath(path, selectorBorderPaint);
-      tp.paint(canvas, Offset(x + w1, y - textHeight / 2));
+      // 오른쪽 가격 표시 
+      // canvas.drawPath(path, selectPointPaint);
+      // canvas.drawPath(path, selectorBorderPaint);
+      // tp.paint(canvas, Offset(x + w1, y - textHeight / 2));
     } else {
       isLeft = true;
       x = mWidth - textWidth - 1 - 2 * w1 - w2;
@@ -292,9 +293,9 @@ class ChartPainter extends BaseChartPainter {
       path.lineTo(mWidth - 2, y - r);
       path.lineTo(x + w2, y - r);
       path.close();
-      canvas.drawPath(path, selectPointPaint);
-      canvas.drawPath(path, selectorBorderPaint);
-      tp.paint(canvas, Offset(x + w1 + w2, y - textHeight / 2));
+      // canvas.drawPath(path, selectPointPaint);
+      // canvas.drawPath(path, selectorBorderPaint);
+      // tp.paint(canvas, Offset(x + w1 + w2, y - textHeight / 2));
     }
 
     TextPainter dateTp =
@@ -567,20 +568,20 @@ class ChartPainter extends BaseChartPainter {
       ..color = this.chartColors.hCrossColor
       ..strokeWidth = this.chartStyle.hCrossWidth
       ..isAntiAlias = true;
-    // k线图横线
-    canvas.drawLine(Offset(-mTranslateX, y),
-        Offset(-mTranslateX + mWidth / scaleX, y), paintX);
-    if (scaleX >= 1) {
-      canvas.drawOval(
-          Rect.fromCenter(
-              center: Offset(x, y), height: 2.0 * scaleX, width: 2.0),
-          paintX);
-    } else {
-      canvas.drawOval(
-          Rect.fromCenter(
-              center: Offset(x, y), height: 2.0, width: 2.0 / scaleX),
-          paintX);
-    }
+    // 가로줄
+    // canvas.drawLine(Offset(-mTranslateX, y),
+    //     Offset(-mTranslateX + mWidth / scaleX, y), paintX);
+    // if (scaleX >= 1) {
+    //   canvas.drawOval(
+    //       Rect.fromCenter(
+    //           center: Offset(x, y), height: 2.0 * scaleX, width: 2.0),
+    //       paintX);
+    // } else {
+    //   canvas.drawOval(
+    //       Rect.fromCenter(
+    //           center: Offset(x, y), height: 2.0, width: 2.0 / scaleX),
+    //       paintX);
+    // }
   }
 
   TextPainter getTextPainter(text, color) {

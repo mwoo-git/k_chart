@@ -120,7 +120,8 @@ abstract class BaseChartPainter extends CustomPainter {
       drawText(canvas, datas!.last, 5);
       drawMaxAndMin(canvas);
       drawNowPrice(canvas);
-
+      
+      // 롱프레스 했을 때 가격이 나타납니다.
       if (isLongPress == true || (isTapShowInfoDialog && isOnTap)) {
         drawCrossLineText(canvas, size);
       }
